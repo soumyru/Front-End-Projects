@@ -1,0 +1,47 @@
+
+.imageGallery{
+    /*this is for mobile view*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap ;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+.imageGallery.column{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.imageItem img{
+    
+    border-radius: 5px;
+    
+    object-fit: cover;
+}
+@media only screen and (min-width:768px) {
+    .imageGallery{
+        flex-direction:row;
+    }
+    
+}
+.overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:antiquewhite;
+    top: 0;
+    left: 0;
+    transform: scale(0);
+    transition: all 0.2s 0.1s ease-in-out; /*CSS transitions allows you to change property values smoothly, over a given duration.*/
+    color: #fff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.imageGallery li:hover .overlay{
+    transition: scale(1);
+}
